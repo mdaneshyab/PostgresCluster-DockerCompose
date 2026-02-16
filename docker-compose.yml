@@ -78,3 +78,20 @@ services:
         environment:
             <<: *haproxy_env
             PATRONI_NAME: patroni3
+
+
+    pgadmin:
+        image: dpage/pgadmin4:latest
+        container_name: pgadmin
+        hostname: pgadmin
+        networks:
+        - demo
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@example.com   # change as needed
+            PGADMIN_DEFAULT_PASSWORD: postgres            # change as needed
+            PGADMIN_LISTEN_PORT: 80
+        ports:
+            - "81:80"
+        volumes:
+            - ./pgadmin/servers.json:/pgadmin4/servers.json  # pre‑configured servers
+        restart: unless-stopped

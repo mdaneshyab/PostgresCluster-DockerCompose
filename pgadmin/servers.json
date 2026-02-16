@@ -1,0 +1,19 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "Patroni Cluster (via HAProxy)",
+            "Group": "Servers",
+            "Host": "haproxy",
+            "Port": 5000,
+            "MaintenanceDB": "postgres",
+            "Username": "postgres",
+            "Password": "postgres",
+            "SSLMode": "prefer",
+            "Timeout": 10,
+            "Shared": false,
+            "SavePassword": true,
+            "Comment": "Automatically added by servers.json"
+        }
+        
+    }
+}
